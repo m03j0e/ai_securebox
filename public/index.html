@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureBox</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <!-- Using DOMPurify from CDN as a fallback/extra layer if we decide to handle raw HTML later -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+</head>
+<body>
+    <div class="background-glow"></div>
+    
+    <main class="container">
+        <header>
+            <h1>SecureBox</h1>
+            <p>Share your thoughts securely.</p>
+        </header>
+
+        <section class="input-section">
+            <form id="messageForm">
+                <div class="input-group">
+                    <textarea id="messageInput" placeholder="Type your message here..." required maxlength="500"></textarea>
+                </div>
+                <button type="submit" id="submitBtn">
+                    <span>Send Message</span>
+                    <div class="btn-glow"></div>
+                </button>
+            </form>
+            <div id="statusMessage" class="status"></div>
+        </section>
+
+        <section class="feed-section">
+            <h2>Recent Messages</h2>
+            <div id="messageFeed" class="feed-grid">
+                <!-- Messages will be injected here -->
+                <div class="loading-spinner">Loading...</div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="app.js"></script>
+</body>
+</html>
